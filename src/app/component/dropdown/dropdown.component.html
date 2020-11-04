@@ -1,0 +1,16 @@
+<div class="dropdown" *ngFor="let option of optionField; let i = index">
+  <div class="dropdown-option">
+    <span>{{ i + 1 }}.</span>
+    <input
+      matInput
+      [name]="'Option ' + i"
+      class="field"
+      [placeholder]="'Option ' + (i + 1)"
+      class="input-field"
+    />
+  </div>
+</div>
+
+<div (click)="expandOption()">
+  <input matInput class="field" class="input-field" />Add Option or Add Other
+</div>

@@ -1,0 +1,14 @@
+.input-field {
+  font-size: 16px;
+  color: #202124;
+  width: 100%;
+  font-weight: 400;
+}
+.checkbox-card {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.form-field {
+  width: 100%;
+}

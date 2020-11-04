@@ -1,0 +1,28 @@
+.question-textarea {
+  width: 45%;
+  margin-right: 10%;
+}
+.text-area-field {
+  font-size: 16px;
+  color: #202124;
+  font-weight: 400;
+}
+.select-option {
+  width: 45%;
+  margin-top: 1%;
+}
+.select-option {
+  position: relative;
+}
+.icon-delete {
+  float: right;
+}
+.form-field {
+  width: 100%;
+}
+.field {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}

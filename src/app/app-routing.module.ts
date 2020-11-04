@@ -5,19 +5,23 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { MaterialModule } from './material.module';
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
+import { AppComponent } from './app.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [ { path: '', loadChildren: () => import('./first-page/first-page.module').then(m => m.FirstPageModule)  },
+{ path: 'register', component: RegistrationComponentComponent },
+{ path: 'survey-form', loadChildren: () => import('./create-survey-form/create-survey-form.module').then(m => m.CreateSurveyFormModule) },
+{ path: 'login', component: LoginComponentComponent }
+];
 
 @NgModule({
   imports: [ BrowserModule,
     BrowserAnimationsModule,
    MaterialModule,
-    RouterModule.forRoot([
-      { path: '', redirectTo: '/', pathMatch: 'full' },
-      { path: 'register', component: RegistrationComponentComponent },
-      { path: 'login', component: LoginComponentComponent },
-       ])],
+    RouterModule.forRoot(
+     routes
+       )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

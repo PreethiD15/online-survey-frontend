@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { MaterialModule } from './material.module';
+import { CreateSurveyFormModule } from './create-survey-form/create-survey-form.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MaterialModule } from './material.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,MaterialModule
+    CreateSurveyFormModule,
+    BrowserAnimationsModule, MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
