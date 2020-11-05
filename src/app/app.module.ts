@@ -8,12 +8,14 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { MaterialModule } from './material.module';
 import {MatInputModule} from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
+import { HomeComponentComponent } from './home-component/home-component.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponentComponent,
-    LoginComponentComponent,
+    LoginComponentComponent,HomeComponentComponent
   ],
   imports: [
     BrowserModule,
