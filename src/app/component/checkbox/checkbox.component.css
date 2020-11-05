@@ -4,11 +4,30 @@
   width: 100%;
   font-weight: 400;
 }
+.dropdown {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
 .checkbox-card {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
+.input-field{
+  display:flex;
+}
 .form-field {
   width: 100%;
+  margin-top:5%;
+}
+.add-option{
+  margin-top: 10px;
+}
+.display-card{
+  margin-bottom:8px;
+}
+.close-cursor{
+  cursor: pointer;
 }

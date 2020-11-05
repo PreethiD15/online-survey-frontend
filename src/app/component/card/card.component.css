@@ -16,6 +16,7 @@
 }
 .icon-delete {
   float: right;
+  cursor: pointer;
 }
 .form-field {
   width: 100%;

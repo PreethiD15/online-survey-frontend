@@ -14,7 +14,7 @@ import { CreateSurveyFormModule } from './create-survey-form/create-survey-form.
   declarations: [
     AppComponent,
     RegistrationComponentComponent,
-    LoginComponentComponent,
+    LoginComponentComponent
   ],
   imports: [
     BrowserModule,

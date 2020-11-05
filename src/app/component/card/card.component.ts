@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-  questionType: string[] = ['Dropdown', 'CheckBox'];
+  questionType: string[] = ['Dropdown', 'CheckBox', 'Multiple Choice'];
+  @Output()
+  closeModal: EventEmitter<boolean> = new EventEmitter();
   countOfQuestion: any[] = [];
   selectedOption: string;
   constructor() {}
@@ -19,6 +21,10 @@ export class CardComponent implements OnInit {
   assignSelectedOption(selectedOption: string): void {
     this.selectedOption = selectedOption;
   }
-
-  deleteQuestion() {}
+  /**
+   * close Question block
+   */
+  closeQuestion(): void {
+    this.closeModal.emit(true);
+  }
 }

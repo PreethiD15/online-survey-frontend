@@ -26,11 +26,11 @@
     </mat-card>
     <mat-card
       class="my-card question-card"
-      *ngFor="let questioncard of countOfQuestion"
+      *ngFor="let questioncard of countOfQuestion;let i=index"
     >
       <mat-card-content>
         <div class="title">
-          <app-card class="width"></app-card>
+          <app-card (closeModal)="closeQuestion(i)" class="width"></app-card>
         </div>
       </mat-card-content>
     </mat-card>

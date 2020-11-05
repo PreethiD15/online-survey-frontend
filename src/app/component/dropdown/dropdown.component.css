@@ -10,6 +10,13 @@
   width: 100%;
   justify-content: flex-start;
 }
+.count{
+  margin-top: 1px;
+  margin-right: 8px;
+}
+.close-cursor{
+  cursor: pointer;
+}
 .field {
   width: 100%;
 }

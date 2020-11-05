@@ -1,25 +1,28 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-create-survey-form',
   templateUrl: './create-survey-form.component.html',
   styleUrls: ['./create-survey-form.component.css'],
-
 })
 export class CreateSurveyFormComponent implements OnInit {
-  questionType: string[] = ['Dropdown', 'CheckBox'];
   countOfQuestion: any[] = [];
+  count = 0;
+  constructor() {}
 
-  constructor() { }
-addQuestion = false;
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  /**
+   * add question block
+   */
+  increaseQuestionCount() {
+    this.count++;
+    this.countOfQuestion.push(this.count);
   }
-increaseQuestionCount(){
- this.addQuestion = true;
- this.countOfQuestion.push('1');
-}
-deleteQuestion(){
-
-}
-
+  /**
+   * remove question from optionField
+   * @param i index
+   */
+  closeQuestion(i: number): void {
+    this.countOfQuestion.splice(i, 1);
+  }
 }

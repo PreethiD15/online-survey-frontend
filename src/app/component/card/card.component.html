@@ -1,4 +1,4 @@
-<mat-form-field class="question-textarea">
+<mat-form-field class="question-textarea" >
   <textarea
     matInput
     name="question"
@@ -17,10 +17,13 @@
     >
   </mat-select>
 </mat-form-field>
-<div class="field" *ngIf="selectedOption === 'CheckBox'">
+<div class="field" *ngIf="selectedOption === 'CheckBox'" >
   <app-checkbox class="form-field"></app-checkbox>
 </div>
 <div class="field" *ngIf="selectedOption === 'Dropdown'">
   <app-dropdown class="form-field"></app-dropdown>
 </div>
-<mat-icon class="icon-delete">delete</mat-icon>
+<div class="field" *ngIf="selectedOption === 'Multiple Choice'">
+  <app-radio-button class="form-field"></app-radio-button>
+</div>
+<mat-icon  (click)="closeQuestion()" class="icon-delete" >delete</mat-icon>

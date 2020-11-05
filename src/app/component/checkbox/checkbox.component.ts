@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-const OPTION = 'Option';
+
 @Component({
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.css'],
 })
 export class CheckboxComponent implements OnInit {
-  count = 0;
-  option = OPTION;
+  count = 1;
   optionField: number[] = [1];
 
   constructor() {
-    this.count++;
+
   }
 
   ngOnInit(): void {}
@@ -28,9 +27,6 @@ export class CheckboxComponent implements OnInit {
    * @param i selected index
    */
   deleteOption(i: number) {
-    const index = this.optionField.indexOf(i);
-    if (index !== -1) {
-      this.optionField.splice(index, 1);
-    }
+      this.optionField.splice(i, 1);
   }
 }

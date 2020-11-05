@@ -1,16 +1,18 @@
 <div class="dropdown" *ngFor="let option of optionField; let i = index">
   <div class="dropdown-option">
-    <span>{{ i + 1 }}.</span>
+    <span class="count">{{ i + 1 }}.</span>
     <input
       matInput
       [name]="'Option ' + i"
       class="field"
       [placeholder]="'Option ' + (i + 1)"
       class="input-field"
+      autocomplete="off"
     />
+    <mat-icon class="icon-delete" (click)="deleteOption(i)">close</mat-icon>
   </div>
 </div>
 
 <div (click)="expandOption()">
-  <input matInput class="field" class="input-field" />Add Option or Add Other
+  <input matInput class="field" class="input-field" readonly/>Add Option or Add Other
 </div>

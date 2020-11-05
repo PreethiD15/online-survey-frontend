@@ -5,7 +5,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
-
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 
@@ -14,23 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
-  imports: [
-    MatButtonModule,
-    MatCheckboxModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatIconModule,
-    MatSelectModule,
-    MatNativeDateModule,
-    MatInputModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatRadioModule,
-    MatDatepickerModule,
-  ],
+
   exports: [
     MatButtonModule,
     MatCheckboxModule,
@@ -45,6 +28,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatFormFieldModule,
     MatRadioModule,
     MatDatepickerModule,
+    MatRadioModule
   ],
 })
 export class MaterialModule {}

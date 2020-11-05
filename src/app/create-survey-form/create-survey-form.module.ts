@@ -17,8 +17,6 @@ import { CardModule } from '../component/card/card.module';
     CommonModule,
     CardModule,
     MaterialModule,
-    MatFormFieldModule,
-    MatInputModule,
     CreateSurveyFormRoutingModule,
   ],
   exports: [CreateSurveyFormComponent],
