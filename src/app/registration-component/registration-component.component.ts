@@ -1,15 +1,64 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { RegistrationService } from '../services/registration.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration-component',
   templateUrl: './registration-component.component.html',
-  styleUrls: ['./registration-component.component.css']
+  styleUrls: ['./registration-component.component.css'],
 })
 export class RegistrationComponentComponent implements OnInit {
+  constructor(
+    private registerSer: RegistrationService,
+    private router: Router
+  ) {}
+  userRegForm: FormGroup = new FormGroup({
+    firstName: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+      Validators.maxLength(30),
+    ]),
+    lastName: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+      Validators.maxLength(30),
+    ]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    role: new FormControl('', [Validators.required]),
+    phone: new FormControl(''),
+    place: new FormControl('SOUTH BANGALORE', [Validators.required]),
+    address: new FormControl(''),
+    userPassword: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(20),
+    ]),
+  });
 
-  constructor() { }
+  ngOnInit(): void {}
+  onSubmit() {
+    console.log(this.userRegForm.value);
+    console.log(this.userRegForm.value.firstName);
+    this.userRegForm.value.address =
+      this.userRegForm.value.flatNo +
+      ',' +
+      this.userRegForm.value.landMark +
+      ',' +
+      this.userRegForm.value.postalCode;
+    this.registerSer.Save(this.userRegForm.value).subscribe(
+      (response) => {
+        if (response) {
+          this.registerSer.isRegister.next(true);
+          this.router.navigate(['/']);
+        } else {
+          this.registerSer.isRegister.next(false);
+        }
+      },
 
-  ngOnInit(): void {
+      (error) => {
+        this.registerSer.isRegister.next(false);
+      }
+    );
   }
-
 }

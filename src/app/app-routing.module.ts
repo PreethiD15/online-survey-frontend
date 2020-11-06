@@ -9,10 +9,12 @@ import { AppComponent } from './app.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 
 
-const routes: Routes = [ { path: '', loadChildren: () => import('./first-page/first-page.module').then(m => m.FirstPageModule)  },
+const routes: Routes = [
 { path: 'register', component: RegistrationComponentComponent },
 { path: 'survey-form', loadChildren: () => import('./create-survey-form/create-survey-form.module').then(m => m.CreateSurveyFormModule) },
-{ path: 'login', component: LoginComponentComponent }
+{ path: 'login', component: LoginComponentComponent },
+{ path: '**', loadChildren: () => import('./first-page/first-page.module').then(m => m.FirstPageModule)  }
+
 ];
 
 @NgModule({

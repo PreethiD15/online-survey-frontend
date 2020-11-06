@@ -1,53 +1,123 @@
-<div class="parent">
-<mat-card>
- <h1> Registration</h1>
- </mat-card>
-<mat-card class="my-card">
-    <mat-card-content>
-       <form class="my-form">  
-          <mat-form-field class="full-width">
-             <mat-label>First Name</mat-label>
-             <input  matInput  placeholder="First name"  name="fname"  required />
-          </mat-form-field>
-          <mat-form-field class="full-width">
-             <mat-label>Last Name</mat-label>
-             <input  matInput  placeholder="Last Name" name="lname"  required />
-          </mat-form-field>
-          <mat-form-field class="full-width">
-             <mat-label>Address</mat-label>
-             <input  matInput  placeholder="Address" name="address"  required />
-          </mat-form-field>
-          <mat-form-field class="full-width">
-             <mat-label>Email</mat-label>
-             <input  matInput  placeholder="Email" name="email" />
-          </mat-form-field>
-          <mat-form-field class="full-width">
-             <mat-label>Password</mat-label>
-             <input  matInput  placeholder="Password"  name="password" />
-          </mat-form-field>
-          <section class="example-section">
-             <label class="full-width">Gender:</label>
-             <br>
-             <br>
-             <mat-radio-group>
-                <mat-radio-button class="example-margin" value="after">Male</mat-radio-button>
-                <mat-radio-button class="example-margin" value="before">Female</mat-radio-button>
-                <mat-radio-button class="example-margin" value="before">Other</mat-radio-button>
-             </mat-radio-group>
-          </section>
-          <mat-form-field class="full-width">
-             <mat-label>Date of Birth</mat-label>
-             <input matInput [matDatepicker]="picker" placeholder="Choose a date" />
-             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-             <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-       </form>
-    </mat-card-content>
-    <mat-card-actions>
-     <button mat-raised-button    color="primary">REGISTER</button>
-     <button mat-raised-button    color="primary">CANCEL </button>
-  
-    <!-- <button mat-raised-button   (click)="register()" color="primary">REGISTER</button>-->
-    </mat-card-actions>
- </mat-card>
-</div>
+<!-- Default form register -->
+
+<form
+  [formGroup]="userRegForm"
+  (validSubmit)="onSubmit()"
+  class="text-center border border-light p-5 mx-auto"
+  style="
+    width: fit-content;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #3c5b8c;
+  "
+>
+  <p class="h4 mb-4" style="color: white">Registration Page</p>
+
+  <div class="form-row mb-4">
+    <div class="col">
+      <!-- First name -->
+      <input
+        type="text"
+        class="form-control"
+        placeholder="First name"
+        formControlName="firstName"
+        required="required"
+      />
+    </div>
+    <div class="col">
+      <!-- Last name -->
+      <input
+        type="text"
+        formControlName="lastName"
+        class="form-control"
+        placeholder="Last name"
+        required="required"
+      />
+    </div>
+  </div>
+  <div class="form-row mb-4">
+    <div class="col">
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control"
+        placeholder="E-mail"
+        required="required"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        pattern="\d*"
+        title="Please enter the numbers only"
+        maxlength="10"
+        class="form-control"
+        formControlName="phone"
+        placeholder="Mobile No"
+        required="required"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        title="Please enter the numbers only"
+        maxlength="10"
+        class="form-control"
+        formControlName="role"
+        placeholder="Role"
+        required="required"
+      />
+    </div>
+  </div>
+  <div class="form-row mb-4">
+    <div class="col">
+      <select class="browser-default custom-select" formControlName="place">
+        <option selected>SOUTH BANGALORE</option>
+        <option value="NORTH_BANGALORE">NORTH BANGALORE</option>
+        <option value="EAST_BANGALORE">EAST BANGALORE</option>
+        <option value="CENTRAL_BANGALORE">CENTRAL BANGALORE</option>
+        <option value="WEST_BANGALORE">WEST BANGALORE</option>
+      </select>
+    </div>
+  </div>
+
+  <input
+    type="password"
+    formControlName="userPassword"
+    class="form-control"
+    placeholder="Password"
+    required="required"
+  />
+  <small
+    id="defaultRegisterFormPasswordHelpBlock"
+    class="form-text text-muted mb-4"
+    style="color: white !important"
+  >
+    At least 8 characters and max 30
+  </small>
+
+  <!-- Sign up button -->
+  <button
+    mdbBtn
+    block="true"
+    type="submit"
+    class="btn btn-outline-info waves-effect my-4"
+    style="
+      border-radius: 20px;
+      background-color: #f0d313 !important;
+      font-weight: bold;
+      color: black !important;
+    "
+  >
+    Save
+  </button>
+  <!-- Terms of service -->
+  <p style="color: white">
+    Already have an account?
+    <a routerLink="/" style="color: #f0d313 !important; font-weight: bold"
+      >Login</a
+    >
+  </p>
+</form>
+<router-outlet></router-outlet>
+<!-- Default form register -->
