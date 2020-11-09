@@ -12,14 +12,14 @@ export class AppComponent {
     this.loginService.isLogin.subscribe((response => {
       if (response){
         this.login = 'LOG OUT';
-        this.sign = '';
+        this.sign = 'Hello,'+this.loginService.getUserMail();
         this.loginLink = '';
       }
     }));
     this.registerService.isRegister.subscribe((response => {
       if (response){
         this.login = 'LOG OUT';
-        this.sign = '';
+        this.sign = 'Hello,'+this.loginService.getUserMail();
         this.loginLink = '';
       }
     }));

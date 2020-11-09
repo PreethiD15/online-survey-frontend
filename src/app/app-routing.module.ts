@@ -13,7 +13,10 @@ const routes: Routes = [
 { path: 'register', component: RegistrationComponentComponent },
 { path: 'survey-form', loadChildren: () => import('./create-survey-form/create-survey-form.module').then(m => m.CreateSurveyFormModule) },
 { path: 'login', component: LoginComponentComponent },
-{ path: '**', loadChildren: () => import('./first-page/first-page.module').then(m => m.FirstPageModule)  }
+{
+  path:'dashboard',loadChildren:()=> import ('./user-dashboard/user-dashboard.module').then(m=>m.UserDashboardModule)
+},
+{ path: '**', loadChildren: () => import('./first-page/first-page.module').then(m => m.FirstPageModule)  },
 
 ];
 

@@ -25,7 +25,7 @@ export class LoginComponentComponent implements OnInit {
         if (response === 'Successfully Logged In'){
           this.loginser.setUserMail(this.userLoginForm.value.email);
           this.loginser.isLogin.next(true);
-          this.router.navigate(['/']);
+          this.router.navigate(['/dashboard']);
         }
 
       },

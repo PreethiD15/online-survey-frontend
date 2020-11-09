@@ -1,0 +1,73 @@
+<label class="heading">Active</label>
+
+<div class="display-card">
+<mdb-card *ngFor="let card of surveyForm">
+    <!--Card image-->
+   
+    <!--Card content-->
+    <mdb-card-body>
+  
+      <!--Title-->
+      <mdb-card-title>
+        <h4>Form Name</h4>
+      </mdb-card-title>
+  
+      <!--Text-->
+      <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+        content.
+      </mdb-card-text>
+      <label class="date"> Last Date:
+      </label>
+      <a href="#" mdbBtn color="primary" mdbWavesEffect>Take Survey</a>
+    </mdb-card-body>
+  </mdb-card>
+</div>
+<label class="heading">Completed</label>
+<div class="display-card">
+  <mdb-card *ngFor="let card of surveyForm" (click)="createChart();frame.show()">
+    <!--Card image-->
+   
+    <!--Card content-->
+    <mdb-card-body>
+  
+      <!--Title-->
+      <mdb-card-title>
+        <h4>Form Name</h4>
+      </mdb-card-title>
+  
+      <!--Text-->
+      <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+        content.
+      </mdb-card-text>
+      <label class="date"> Last Date:
+      </label>
+      
+    </mdb-card-body>
+  </mdb-card>
+
+<div mdbModal #frame="mdbModal" class="modal fade" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-info" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex">
+        <p class="heading">Survey Form</p>
+        
+        <mat-icon class="icon-delete" (click)="frame.hide()">close</mat-icon>
+
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <mdb-icon fas icon="bell" size="4x" class="animated rotateIn mb-4"></mdb-icon>
+        <canvas id="myChart" width="400" height="400" class="chart"></canvas>
+      </div>
+
+      <!--Footer-->
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+</div>
+ 

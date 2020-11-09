@@ -17,6 +17,9 @@
   margin-top: 2%;
   margin-bottom: 1px;
 }
+button:focus{
+  outline:none;
+}
 .my-form {
   width: 100%;
   margin-top: -58px;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RegistrationService } from '../services/registration.service';
 import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-registration-component',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 export class RegistrationComponentComponent implements OnInit {
   constructor(
     private registerSer: RegistrationService,
+    private loginSer:LoginService,
     private router: Router
   ) {}
   userRegForm: FormGroup = new FormGroup({
@@ -50,7 +52,8 @@ export class RegistrationComponentComponent implements OnInit {
       (response) => {
         if (response) {
           this.registerSer.isRegister.next(true);
-          this.router.navigate(['/']);
+          this.loginSer.setUserMail(this.userRegForm.value.email);
+          this.router.navigate(['/dashboard']);
         } else {
           this.registerSer.isRegister.next(false);
         }
