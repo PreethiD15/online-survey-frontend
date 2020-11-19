@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { ProfileService } from './profile.service';
 
 @Injectable({
@@ -7,8 +7,8 @@ import { ProfileService } from './profile.service';
 })
 export class AuthenticationService implements CanActivate{
 
-  constructor(private profileService:ProfileService) { }
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-   return this.profileService.userDetails ? true: false;
+  constructor(private profileService:ProfileService,private router:Router) { }
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
+   return this.profileService.userDetails ? true: this.router.navigate(['/']);
   }
 }

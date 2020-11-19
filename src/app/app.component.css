@@ -1,6 +1,10 @@
 .spacer {
-    flex: 1 1 auto;
-  }
-  a:hover{
-    color:white
-  }
+  flex: 1 1 auto;
+}
+a:hover {
+  color: white;
+}
+.header {
+  background-color: #3c5b8c;
+  color: white;
+}
