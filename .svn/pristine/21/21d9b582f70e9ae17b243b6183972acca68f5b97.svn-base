@@ -1,0 +1,50 @@
+<div class="width">
+  <div class="back" (click)="backToDashBoard()">
+  <mat-icon>arrow_back</mat-icon>
+  <label class="back_dashboard">Back to dashboard</label>
+  </div>
+  <mat-toolbar class="heading">
+    <span>Create Survey form</span>
+  </mat-toolbar>
+  <form class="my-form">
+    <mat-card class="my-card example-card">
+      <mat-card-content>
+        <div class="title">
+          <span class="label-name">Title:</span>
+          <mat-form-field class="full-width">
+            <input matInput name="title" class="input-field" />
+          </mat-form-field>
+        </div>
+        <div style="display: flex; justify-content: flex-end">
+          <button
+            mat-raised-button
+            style="justify-content: flex-end"
+            (click)="increaseQuestionCount()"
+            type="button"
+            color="primary"
+          >
+            Add Question<mat-icon>add_button</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card
+      class="my-card question-card"
+      *ngFor="let questioncard of countOfQuestion;let i=index"
+    >
+      <mat-card-content>
+        <div class="title">
+          <app-card (closeModal)="closeQuestion(i)" class="width"></app-card>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <button
+      mat-raised-button
+      type="button"
+      color="primary"
+      class="create-button"
+    >
+      Create
+    </button>
+  </form>
+</div>

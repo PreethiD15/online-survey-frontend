@@ -1,0 +1,103 @@
+<!-- Default form register -->
+
+<form
+  [formGroup]="userRegForm"
+  (validSubmit)="onSubmit()"
+  class="text-center border border-light p-5 mx-auto"
+  style="
+    width: fit-content;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #3c5b8c;
+  "
+>
+  <p class="h4 mb-4" style="color: white">Registration Page</p>
+
+  <div class="form-row mb-4">
+    <div class="col">
+      <!-- First name -->
+      <input
+        type="text"
+        class="form-control"
+        placeholder="First name"
+        formControlName="firstName"
+        required="required"
+      />
+    </div>
+    <div class="col">
+      <!-- Last name -->
+      <input
+        type="text"
+        formControlName="lastName"
+        class="form-control"
+        placeholder="Last name"
+        required="required"
+      />
+    </div>
+  </div>
+  <div class="form-row mb-4">
+    <div class="col">
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control"
+        placeholder="E-mail"
+        required="required"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        pattern="\d*"
+        title="Please enter the numbers only"
+        maxlength="10"
+        class="form-control"
+        formControlName="phone"
+        placeholder="Mobile No"
+        required="required"
+      />
+    </div>
+    
+  </div>
+  
+
+  <input
+    type="password"
+    formControlName="userPassword"
+    class="form-control"
+    placeholder="Password"
+    required="required"
+  />
+  <small
+    id="defaultRegisterFormPasswordHelpBlock"
+    class="form-text text-muted mb-4"
+    style="color: white !important"
+  >
+    At least 8 characters and max 30
+  </small>
+
+  <!-- Sign up button -->
+  <button
+    mdbBtn
+    block="true"
+    type="submit"
+    class="btn btn-outline-info waves-effect my-4"
+    style="
+      border-radius: 20px;
+      background-color: #f0d313 !important;
+      font-weight: bold;
+      color: black !important;
+    "
+  >
+    Save
+  </button>
+  <!-- Terms of service -->
+  <p style="color: white">
+    Already have an account?
+    <a routerLink="" style="color: #f0d313 !important; font-weight: bold"
+      >Login</a
+    >
+  </p>
+</form>
+<router-outlet></router-outlet>
+<!-- Default form register -->

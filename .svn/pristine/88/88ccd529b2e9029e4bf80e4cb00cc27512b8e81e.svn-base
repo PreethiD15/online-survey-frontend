@@ -1,0 +1,29 @@
+<mat-form-field class="question-textarea" >
+  <textarea
+    matInput
+    name="question"
+    class="text-area-field"
+    placeholder="Question"
+  ></textarea>
+</mat-form-field>
+<mat-form-field appearance="fill" class="select-option">
+  <mat-label>Question Type</mat-label>
+  <mat-select>
+    <mat-option
+      *ngFor="let topping of questionType"
+      [value]="topping"
+      (click)="assignSelectedOption(topping)"
+      >{{ topping }}</mat-option
+    >
+  </mat-select>
+</mat-form-field>
+<div class="field" *ngIf="selectedOption === 'CheckBox'" >
+  <app-checkbox class="form-field"></app-checkbox>
+</div>
+<div class="field" *ngIf="selectedOption === 'Dropdown'">
+  <app-dropdown class="form-field"></app-dropdown>
+</div>
+<div class="field" *ngIf="selectedOption === 'Multiple Choice'">
+  <app-radio-button class="form-field"></app-radio-button>
+</div>
+<mat-icon  (click)="closeQuestion()" class="icon-delete" >delete</mat-icon>

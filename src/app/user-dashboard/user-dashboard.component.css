@@ -1,0 +1,30 @@
+.card{
+    width:20%;
+    margin-left:50px;
+}
+.display-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+.date{
+    display:flex;
+    justify-content: center;
+    font-size: 11px;
+    color: grey;
+}
+
+.heading{
+    font-size: 20px;
+    margin-top: 25px;
+    margin-left: 63px;
+    margin-bottom: 22px;
+    font-weight:500;
+}
+.mat-icon{
+    color: white;
+}
+.modal-dialog{
+    margin: 4.75rem auto;
+}

@@ -1,0 +1,154 @@
+<div class="width">
+  <div class="back" (click)="backToDashBoard()">
+    <mat-icon>arrow_back</mat-icon>
+    <label class="back_dashboard">Back to dashboard</label>
+  </div>
+
+  <mat-toolbar class="heading">
+    <span>Create Survey form</span>
+  </mat-toolbar>
+  <form
+    class="my-form"
+    [formGroup]="createSurveyForm"
+    (validSubmit)="onSubmit()"
+  >
+    <mat-card class="my-card example-card">
+      <mat-card-content>
+        <div class="title">
+          <span class="label-name">Title:</span>
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              name="title"
+              autocomplete="off"
+              class="input-field"
+              formControlName="title"
+            />
+            <mat-error>Required Field</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="title">
+          <span class="label-name">Description:</span>
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              autocomplete="off"
+              name="title"
+              class="input-field"
+              formControlName="description"
+            />
+            <mat-error>Required Field</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="title">
+          <span class="label-name">Survey Type:</span>
+          <div
+            *ngFor="let option of optionForSurvey; let i = index"
+            class="title"
+          >
+            <div class="title checkbox">
+              <mat-checkbox
+                class="example-margin"
+                [checked]="selected === i"
+                (change)="
+                  selected = i;
+                  selectedType = option;
+                  this.createSurveyForm.controls['surveyType'].setValue(option);
+                  setValidations()
+                "
+              >
+              </mat-checkbox>
+            </div>
+            <label>{{ option }}</label>
+          </div>
+        </div>
+        <div class="title" *ngIf="selectedType === 'Number'">
+          <span class="label-name">Enter Number:</span>
+          <mat-form-field>
+            <input
+              matInput
+              name="title"
+              class="input-field"
+              autocomplete="off"
+              formControlName="numberOfResponse"
+            />
+            <mat-error>Required Field</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="title" *ngIf="selectedType === 'Date'">
+          <mat-form-field appearance="fill" class="date-picker">
+            <mat-label>Choose a start date</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker2"
+              [min]="minDate"
+              autocomplete="off"
+              formControlName="startDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker2"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+            <mat-error>Required Field</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Choose a end date</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker1"
+              [min]="this.createSurveyForm.controls['startDate'].value"
+              formControlName="endDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker1"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+            <mat-error
+              *ngIf="
+                this.createSurveyForm.controls['endDate'].hasError('required')
+              "
+              >Required Field</mat-error
+            >
+          </mat-form-field>
+        </div>
+        <div style="display: flex; justify-content: flex-end">
+          <button
+            mat-raised-button
+            style="justify-content: flex-end"
+            (click)="increaseQuestionCount()"
+            type="button"
+            color="primary"
+          >
+            Add Question<mat-icon>add_button</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card
+      class="my-card question-card"
+      *ngFor="let questioncard of countOfQuestion; let i = index"
+    >
+      <mat-card-content>
+        <div class="title">
+          <app-card
+            (closeModal)="closeQuestion(i, $event)"
+            (eventValue)="cardValue($event)"
+            class="width"
+          ></app-card>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <button
+      mat-raised-button
+      type="button"
+      color="primary"
+      class="create-button"
+      (click)="onSubmit()"
+    >
+      Create
+    </button>
+  </form>
+</div>

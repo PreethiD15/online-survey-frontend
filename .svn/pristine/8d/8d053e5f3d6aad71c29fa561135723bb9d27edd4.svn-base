@@ -1,0 +1,49 @@
+<form [formGroup]="createQuestionCard">
+  <mat-form-field class="question-textarea">
+    <textarea
+      matInput
+      autocomplete="off"
+      name="question"
+      class="text-area-field"
+      placeholder="Question"
+      formControlName="question"
+    ></textarea>
+    <mat-error>Required Field</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="select-option">
+    <mat-label>Question Type</mat-label>
+    <mat-select formControlName="questionType">
+      <mat-option
+        *ngFor="let topping of questionType"
+        [value]="topping"
+        (click)="assignSelectedOption(topping)"
+        >{{ topping }}</mat-option
+      >
+    </mat-select>
+    <mat-error>Required Field</mat-error>
+  </mat-form-field>
+  <div class="field" *ngIf="selectedOption === 'CheckBox'">
+    <app-checkbox
+      class="form-field"
+      (valueForCheckBox)="emit($event)"
+    ></app-checkbox>
+  </div>
+  <div class="field" *ngIf="selectedOption === 'Dropdown'">
+    <app-dropdown
+      class="form-field"
+      (valueForDropdown)="emit($event)"
+    ></app-dropdown>
+  </div>
+  <div class="field" *ngIf="selectedOption === 'Multiple Choice'">
+    <app-radio-button
+      class="form-field"
+      (valueForRadio)="emit($event)"
+    ></app-radio-button>
+  </div>
+  <div>
+    <mat-icon (click)="onSubmit()" class="icon-delete icon-check"
+      >check</mat-icon
+    >
+  </div>
+  <mat-icon (click)="closeQuestion()" class="icon-delete">delete</mat-icon>
+</form>

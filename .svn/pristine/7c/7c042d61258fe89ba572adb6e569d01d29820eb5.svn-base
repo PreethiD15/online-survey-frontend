@@ -1,0 +1,16 @@
+[{
+    "question":"What do you think about data?",
+    "questionType":"Dropdown",
+    "options":["Information","Knowledge","Data"]
+},
+{
+    "question":"What do you think about data?",
+    "questionType":"Multiple Choice",
+    "options":["Information","Knowledge","Data"]
+},
+{
+    "question":"What do you think about data?",
+    "questionType":"CheckBox",
+    "options":["Information","Knowledge","Data"]
+}
+]

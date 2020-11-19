@@ -1,0 +1,63 @@
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { LoginService } from '../services/login.service';
+import { Router } from '@angular/router';
+import { ProfileService } from '../services/profile.service';
+@Component({
+  selector: 'app-login-component',
+  templateUrl: './login-component.component.html',
+  styleUrls: ['./login-component.component.css']
+})
+export class LoginComponentComponent implements OnInit {
+
+  constructor(private loginser: LoginService,
+     private profileser:ProfileService,
+       private router: Router) { }
+  userLoginForm: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    userPassword: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)])
+  });
+
+  ngOnInit(): void {
+  }
+  onSubmit(){
+
+   this.loginser.Save(this.userLoginForm.value).subscribe(
+      response =>  {
+        if (response === 'Successfully Logged In'){
+          alert(response)
+          this.loginser.setUserMail(this.userLoginForm.value.email);
+          this.loginser.isLogin.next(true);
+          this.setProfileDetails();
+          
+        }else{
+          alert(response);
+        }
+
+      },
+
+      error => {
+        this.loginser.isLogin.next(false);
+        console.log(error);
+      }
+    );
+   }
+
+   setProfileDetails(){
+    this.profileser.get(this.userLoginForm.value.email).subscribe(
+      response=>{
+        console.log(response);
+        this.profileser.userDetails=response;
+        if(this.profileser.userDetails['role']=='ADMIN'){
+          this.router.navigate(['/admin-dashboard']);
+        }
+        else{
+          this.router.navigate(['/dashboard']);
+        }
+      },
+      error=>{
+        console.log(error);
+      }
+    );
+  }
+}

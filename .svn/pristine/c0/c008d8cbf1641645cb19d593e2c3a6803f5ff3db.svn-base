@@ -1,0 +1,70 @@
+.example-card {
+  max-width: 100%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 6%;
+  border-top: 10px solid #3f51b5;
+  border-left: 10px solid #3f51b5;
+}
+.title {
+  display: flex;
+  flex-wrap: wrap;
+}
+.question-card {
+  max-width: 100%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 2%;
+  margin-bottom: 1px;
+}
+button:focus{
+  outline:none;
+}
+.back_dashboard{
+  font-size: 18px;
+  margin-top: 3px;
+}
+.my-form {
+  width: 100%;
+  margin-top: -58px;
+}
+.back{
+  cursor: pointer;
+  display: flex;
+  justify-content: start;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.heading {
+  display: flex;
+  margin-top: 5px;
+  background: white;
+  justify-content: center;
+}
+.full-width {
+  width: 90%;
+}
+.create-button {
+  margin-left: 70%;
+  margin-top: 1%;
+}
+
+.input-field {
+  font-size: 16px;
+  color: #202124;
+  width: 75%;
+  font-weight: 400;
+}
+.question-card {
+  margin-top: 2%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.label-name {
+  margin-top: 3%;
+  font-size: 16px;
+  width: 10%;
+}
+.width{
+  width:100%
+}

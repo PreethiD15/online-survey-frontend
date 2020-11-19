@@ -1,0 +1,32 @@
+
+<!-- Default form login -->
+<form  [formGroup]="userLoginForm" (validSubmit)="onSubmit()" class="text-center border border-light p-5 mx-auto" style="width:30%;margin-top: 20px;border-radius: 20px;background-color: #3c5b8c">
+
+   <p class="h4 mb-4" style="color: white;">Login Page</p>
+ 
+   <div class="form-row mb-4">
+     <div class="col">
+       <input type="email" formControlName="email" class="form-control" placeholder="E-mail" required="required">
+     </div>
+   </div>
+   <div class="form-row mb-4">
+     <div class="col">
+       <!-- Last name -->
+       <input type="password" formControlName="userPassword"   class="form-control" placeholder="Password"  required="required" >
+       <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4" style="color: white !important;">
+         At least 8 characters and max 30
+       </small>
+     </div>
+   </div>  
+  
+   <button mdbBtn block="true" type="submit" class="btn btn-outline-info waves-effect my-4" style="border-radius:20px;background-color: #f0d313 !important;
+   font-weight: bold; color: black !important;">Sign In</button>
+     <!-- Register -->
+   <p style="color: white;">Not a member?
+       <a routerLink="/register" style="color: #f0d313 !important;font-weight: bold;">Register</a>
+   </p>
+ 
+     <!-- Social login -->
+ 
+   </form>
+   <!-- Default form login -->

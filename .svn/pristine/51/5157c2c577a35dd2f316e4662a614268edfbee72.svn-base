@@ -1,0 +1,50 @@
+{
+	"surveyDescription":"Education Program",
+	"surveyTitle":"Education program",
+	"surveyType": "NUMBER",
+	"numberOfPeopleResponse":10,
+	"isOpen":true,
+	"userId":10,
+	"startDate":"2012-04-23T18:25:43.511Z",
+	"questionList":[{
+		"questionText":"What do you think about data?",
+		"questionType":"Dropdown",
+		"options":[{
+			"optionName":"Information"
+			
+		},
+							 {
+			"optionName":"Raw Data"
+			
+		}
+		]
+	},
+									{
+		"questionText":" Do yu like spicy food?",
+										"questionType":"CheckBox",
+		"options":[{
+			"optionName":"Yes"
+			
+		},
+							 {
+			"optionName":"No"
+			
+		}
+		]
+    },
+    {
+		"questionText":" Do yu like sweet food?",
+										"questionType":"Multiple Choice",
+		"options":[{
+			"optionName":"Yes"
+			
+		},
+							 {
+			"optionName":"No"
+			
+		}
+		]
+	}
+									
+                                 ]
+                                }

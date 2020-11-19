@@ -1,0 +1,26 @@
+<div class="display-card" *ngFor="let option of optionField; let i = index">
+  <div class="dropdown-option">
+    <mat-radio-button class="example-margin" [disabled]="true">
+      <div class="input-field">
+        <input
+          matInput
+          autocomplete="off"
+          [name]="'Option ' + i"
+          style="width: 100%"
+          [placeholder]="'Option ' + (i + 1)"
+          class="input-field"
+        />
+
+        <mat-icon class="icon-delete" (click)="deleteOption(i)">close</mat-icon>
+      </div>
+    </mat-radio-button>
+  </div>
+</div>
+<div class="add-option">
+  <mat-radio-button
+    class="example-margin form-field"
+    [disabled]="true"
+    (click)="expandOption()"
+    >Add Option or Add Other</mat-radio-button
+  >
+</div>

@@ -1,0 +1,23 @@
+<div class="display-card" *ngFor="let option of optionField; let i = index">
+  <div class="dropdown-option">
+    <mat-checkbox class="example-margin" [disabled]="true">
+      <div class="input-field">
+        <app-input
+          [name]="'Option ' + i"
+          [placeholder]="'Option ' + (i + 1)"
+          [index]="i"
+          (inputValueChange)="emit($event,i)"
+        ></app-input>
+        <mat-icon class="icon-delete" (click)="deleteOption(i)">close</mat-icon>
+      </div>
+    </mat-checkbox>
+  </div>
+</div>
+<div class="add-option">
+  <mat-checkbox
+    class="example-margin form-field"
+    [disabled]="true"
+    (click)="expandOption()"
+    >Add Option or Add Other</mat-checkbox
+  >
+</div>

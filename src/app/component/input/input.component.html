@@ -1,0 +1,11 @@
+<input
+  matInput
+  autocomplete="off"
+  [name]="name"
+  style="width: 100%"
+  [placeholder]="placeholder"
+  class="input-field"
+  (focusout)="returnInput()"
+  [(ngModel)]="optionValue"
+  (ngModelChange)="optionValue = $event"
+/>

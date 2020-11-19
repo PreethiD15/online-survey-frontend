@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <!--  <span>HOME</span> -->
+     <span>MINDTREE ONLINE SURVEY APPLICATION</span>
+     <span class="spacer"></span>
+     <a mat-button routerLink="/register" >{{sign}}</a>
+     <a mat-button [routerLink]="loginLink" (click)="callLogin()">{{login}}</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

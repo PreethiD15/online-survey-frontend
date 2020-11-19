@@ -1,0 +1,19 @@
+<div class="content">
+ <button
+ mat-raised-button
+ type="button"
+ color="primary"
+ (click)="createSurveyForm()"
+ class="create-button"
+>
+ Create Survey Form
+</button>
+<button
+mat-raised-button
+type="button"
+color="primary"
+class="create-button"
+>
+Fetch Survey Form
+</button>
+</div>

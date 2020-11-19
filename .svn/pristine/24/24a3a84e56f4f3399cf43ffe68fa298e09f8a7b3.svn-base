@@ -1,0 +1,33 @@
+.input-field {
+    font-size: 16px;
+    color: #202124;
+    width: 100%;
+    font-weight: 400;
+  }
+  .dropdown {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .checkbox-card {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .input-field{
+    display:flex;
+  }
+  .form-field {
+    width: 100%;
+    
+  }
+  .close-cursor{
+    cursor: pointer;
+  }
+  .add-option{
+    margin-top: 10px;
+  }
+  .display-card{
+    margin-bottom:8px;
+  }

@@ -1,0 +1,17 @@
+.fullBg{
+    height:42em;
+     background-size:cover;
+     width:100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:100% 100%;
+    opacity: 0.5;
+    position:relative;
+}
+.text{
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    color: white;
+    font-size: 12px;
+}
